@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redisapp
+  labels:
+    name: redisapp
+    author: vinay
+spec:
+  selector:
+    matchLabels:
+      name: redisapp
+  template:
+    metadata:
+      name: redispod
+      labels:
+        name: redis
+        author: vinay
+    spec:
+      containers:
+        - name: myredis
+          image: redis

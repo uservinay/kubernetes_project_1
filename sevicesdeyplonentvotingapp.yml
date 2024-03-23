@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: voteing-sevices
+  labels:
+    name: voting-service
+    author: vinay
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 3080
+  selector:
+    name: voteingapp
+
+

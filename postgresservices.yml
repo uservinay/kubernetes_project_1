@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresapp
+  labels:
+    name: result
+    author: vinay
+spec:
+  ports:
+    - targetPort: 5432
+      port: 80
+  selector:
+    name: postgresapp

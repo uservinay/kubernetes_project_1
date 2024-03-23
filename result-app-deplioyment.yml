@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resultapp
+  labels:
+    name: resultapp
+    author: vinay
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: resultapp
+  template:
+    metadata:
+      name: resultapppod
+      labels:
+        name: resultapp
+        author: vinay
+    spec:
+      containers:
+        - name: resultcontainer
+          image: dockersamples/examplevotingapp_result
